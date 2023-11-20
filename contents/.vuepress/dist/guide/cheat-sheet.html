@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Z  主要知识点 | Blog.Core</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/.doc/favicon.ico">
+    <meta name="description" content="Hello, 欢迎使用前后端分离之 ASP.NET Core 后端全家桶框架!">
+    
+    <link rel="preload" href="/.doc/assets/css/0.styles.dee2930d.css" as="style"><link rel="preload" href="/.doc/assets/js/app.9f716c86.js" as="script"><link rel="preload" href="/.doc/assets/js/2.9993b050.js" as="script"><link rel="preload" href="/.doc/assets/js/1.2563e7c6.js" as="script"><link rel="preload" href="/.doc/assets/js/28.cda83a6f.js" as="script"><link rel="prefetch" href="/.doc/assets/js/10.ef728bdd.js"><link rel="prefetch" href="/.doc/assets/js/11.8ac5d1e0.js"><link rel="prefetch" href="/.doc/assets/js/12.34c73094.js"><link rel="prefetch" href="/.doc/assets/js/13.ffff2301.js"><link rel="prefetch" href="/.doc/assets/js/14.daad03b1.js"><link rel="prefetch" href="/.doc/assets/js/15.a6a3d897.js"><link rel="prefetch" href="/.doc/assets/js/16.6fd44419.js"><link rel="prefetch" href="/.doc/assets/js/17.b8bd5064.js"><link rel="prefetch" href="/.doc/assets/js/18.e6ba2ff7.js"><link rel="prefetch" href="/.doc/assets/js/19.8c46317b.js"><link rel="prefetch" href="/.doc/assets/js/20.b43d0d46.js"><link rel="prefetch" href="/.doc/assets/js/21.3d5a5e81.js"><link rel="prefetch" href="/.doc/assets/js/22.68f53e17.js"><link rel="prefetch" href="/.doc/assets/js/23.4b268a8e.js"><link rel="prefetch" href="/.doc/assets/js/24.b0d92d6e.js"><link rel="prefetch" href="/.doc/assets/js/25.e190b6f1.js"><link rel="prefetch" href="/.doc/assets/js/26.f7372e92.js"><link rel="prefetch" href="/.doc/assets/js/27.3894c980.js"><link rel="prefetch" href="/.doc/assets/js/29.eec09039.js"><link rel="prefetch" href="/.doc/assets/js/3.6471b2b2.js"><link rel="prefetch" href="/.doc/assets/js/30.9fafc074.js"><link rel="prefetch" href="/.doc/assets/js/4.c1ca998f.js"><link rel="prefetch" href="/.doc/assets/js/5.d22330d1.js"><link rel="prefetch" href="/.doc/assets/js/6.e632449b.js"><link rel="prefetch" href="/.doc/assets/js/7.6c339768.js"><link rel="prefetch" href="/.doc/assets/js/vendors~docsearch.dd461856.js">
+    <link rel="stylesheet" href="/.doc/assets/css/0.styles.dee2930d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/.doc/" class="home-link router-link-active"><!----> <span class="site-name">Blog.Core</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/.doc/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/.doc/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/.doc/Update/" class="nav-link">
+  更新日志
+</a></div><div class="nav-item"><a href="/.doc/PressureTest/" class="nav-link">
+  压测
+</a></div><div class="nav-item"><a href="/.doc/Contribution/" class="nav-link">
+  参与贡献
+</a></div><div class="nav-item"><a href="/.doc/QQ/" class="nav-link">
+  BCVP社区
+</a></div><div class="nav-item"><a href="http://apk.neters.club" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  接口API
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://vueadmin.neters.club" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  管理后台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/anjoy8/Blog.Core" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/.doc/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/.doc/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><a href="/.doc/Update/" class="nav-link">
+  更新日志
+</a></div><div class="nav-item"><a href="/.doc/PressureTest/" class="nav-link">
+  压测
+</a></div><div class="nav-item"><a href="/.doc/Contribution/" class="nav-link">
+  参与贡献
+</a></div><div class="nav-item"><a href="/.doc/QQ/" class="nav-link">
+  BCVP社区
+</a></div><div class="nav-item"><a href="http://apk.neters.club" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  接口API
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="http://vueadmin.neters.club" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  管理后台
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/anjoy8/Blog.Core" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Guide</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/.doc/guide/" aria-current="page" class="sidebar-link">W 文档指南</a></li><li><a href="/.doc/guide/getting-started.html" class="sidebar-link">K  快速上手</a></li><li><a href="/.doc/guide/function-sheet.html" class="sidebar-link">H  核心功能一览表</a></li><li><a href="/.doc/guide/cheat-sheet.html" aria-current="page" class="active sidebar-link">Z  主要知识点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#aop" class="sidebar-link">AOP</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#appsettings" class="sidebar-link">Appsettings</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#aspnetcoreratelimit" class="sidebar-link">AspNetCoreRateLimit</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#async-await" class="sidebar-link">Async-Await</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#authorization-ids4" class="sidebar-link">Authorization-Ids4</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#如何在swagger中配置ids4" class="sidebar-link">如何在Swagger中配置Ids4？</a></li></ul></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#authorization-jwt" class="sidebar-link">Authorization-JWT</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#automapper" class="sidebar-link">AutoMapper</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#cors" class="sidebar-link">CORS</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#di-autofac" class="sidebar-link">DI-AutoFac</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#di-netcore" class="sidebar-link">DI-NetCore</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#filter" class="sidebar-link">Filter</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#framework" class="sidebar-link">Framework</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#log" class="sidebar-link">Log</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#memorycache" class="sidebar-link">MemoryCache</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#middleware" class="sidebar-link">Middleware</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#miniprofiler" class="sidebar-link">MiniProfiler</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#publish" class="sidebar-link">publish</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#redis" class="sidebar-link">Redis</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#repository" class="sidebar-link">Repository</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#seeddata" class="sidebar-link">SeedData</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#signalr" class="sidebar-link">SignalR</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#sqlsugar" class="sidebar-link">SqlSugar</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#sqlsugar-codefirst-dataseed" class="sidebar-link">SqlSugar-Codefirst&amp;DataSeed</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#sqlsugar-sqlaop" class="sidebar-link">SqlSugar-SqlAOP</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#swagger" class="sidebar-link">Swagger</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#t4" class="sidebar-link">T4</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#test-xunit" class="sidebar-link">Test-xUnit</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#temple-nuget" class="sidebar-link">Temple-Nuget</a></li><li class="sidebar-sub-header"><a href="/.doc/guide/cheat-sheet.html#userinfo" class="sidebar-link">UserInfo</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="z-主要知识点"><a href="#z-主要知识点" class="header-anchor">#</a> Z  主要知识点</h1> <h2 id="aop"><a href="#aop" class="header-anchor">#</a> AOP</h2> <p>本项目多处采用面向切面编程思想——AOP，除了广义上的过滤器和中间件以外，主要通过动态代理的形式来实现AOP编程思想，主要的案例共有四个，分别是：<br>
+1、服务日志AOP；<br>
+2、服务InMemory缓存AOP；<br>
+3、服务Redis缓存AOP；<br>
+4、服务事务AOP；</p> <p>具体的代码可以在 <code>Blog.Core\Blog.Core\AOP</code> 文件夹下查看。</p> <p>与此同时，多个AOP也设置了阀门来控制是否开启，具体的可以查看 <code>appsettings.json</code> 中的：</p> <div class="language- extra-class"><pre class="language-text"><code>  &quot;AppSettings&quot;: {
+    &quot;RedisCachingAOP&quot;: {
+      &quot;Enabled&quot;: false,
+      &quot;ConnectionString&quot;: &quot;127.0.0.1:6319&quot;
+    },
+    &quot;MemoryCachingAOP&quot;: {
+      &quot;Enabled&quot;: true
+    },
+    &quot;LogAOP&quot;: {
+      &quot;Enabled&quot;: false
+    },
+    &quot;TranAOP&quot;: {
+      &quot;Enabled&quot;: false
+    },
+    &quot;SqlAOP&quot;: {
+      &quot;Enabled&quot;: false
+    }
+  },
+
+</code></pre></div><h2 id="appsettings"><a href="#appsettings" class="header-anchor">#</a> Appsettings</h2> <p>整个系统通过一个封装的操作类 <code>Appsettings.cs</code> 来控制配置文件 <code>appsettings.json</code> 文件，<br>
+操作类地址在：<code>\Blog.Core.Common\Helper</code> 文件夹下。<br>
+具体的使用方法是：</p> <div class="language- extra-class"><pre class="language-text"><code>Appsettings.app(new string[] { &quot;AppSettings&quot;, &quot;RedisCachingAOP&quot;, &quot;Enabled&quot; })
+
+// 里边的参数，按照 appsettings.json 中设置的层级顺序来写，可以获取到指定的任意内容。
+
+</code></pre></div><h2 id="aspnetcoreratelimit"><a href="#aspnetcoreratelimit" class="header-anchor">#</a> AspNetCoreRateLimit</h2> <p>系统使用 <code>AspNetCoreRateLimit</code> 组件来实现ip限流：
+1、添加 <code>nuget</code> 包：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;PackageReference Include=&quot;AspNetCoreRateLimit&quot; Version=&quot;3.0.5&quot; /&gt;
+</code></pre></div><p>2、注入服务 <code>IpPolicyRateLimitSetup.cs</code></p> <div class="language- extra-class"><pre class="language-text"><code>services.AddIpPolicyRateLimitSetup(Configuration);
+</code></pre></div><p>3、配置中间件</p> <div class="language- extra-class"><pre class="language-text"><code> // Ip限流,尽量放管道外层
+ app.UseIpRateLimiting();
+</code></pre></div><p>4、配置数据</p> <p>具体的内容，自行百度即可</p> <div class="language- extra-class"><pre class="language-text"><code>  &quot;IpRateLimiting&quot;: {
+    &quot;EnableEndpointRateLimiting&quot;: true,
+    &quot;StackBlockedRequests&quot;: false,
+    &quot;RealIpHeader&quot;: &quot;X-Real-IP&quot;,
+    &quot;ClientIdHeader&quot;: &quot;X-ClientId&quot;,
+    &quot;HttpStatusCode&quot;: 429,//返回状态码
+    &quot;GeneralRules&quot;: [//规则,结尾一定要带*
+      {
+        &quot;Endpoint&quot;: &quot;*&quot;,
+        &quot;Period&quot;: &quot;1m&quot;,
+        &quot;Limit&quot;: 120
+      },
+      {
+        &quot;Endpoint&quot;: &quot;*:/api/blog*&quot;,
+        &quot;Period&quot;: &quot;1m&quot;,
+        &quot;Limit&quot;: 30
+      }
+    ]
+
+  }
+</code></pre></div><h2 id="async-await"><a href="#async-await" class="header-anchor">#</a> Async-Await</h2> <p>整个系统采用 async/await 异步编程，符合主流的开发模式，<br>
+特别是对多线程开发很友好。</p> <h2 id="authorization-ids4"><a href="#authorization-ids4" class="header-anchor">#</a> Authorization-Ids4</h2> <p>本系统 v2.0 版本（目前的系统已经集成 <code>ids4</code> 和 <code>jwt</code>，并且可以自由切换），已经支持了统一授权认证，和 <code>blog</code> 项目、<code>Admin</code> 项目、<code>DDD</code> 项目等一起，使用一个统一的认证中心。</p> <p>具体的代码参考：<code>.\Blog.Core\Extensions</code> 文件夹下的 <code>Authorization_Ids4Setup.cs</code> ，注意需要引用指定的 <code>nuget</code> 包，核心代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>    //【认证】
+  services.AddAuthentication(o =&gt;
+  {
+      o.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+      o.DefaultChallengeScheme = nameof(ApiResponseHandler);
+      o.DefaultForbidScheme = nameof(ApiResponseHandler);
+  })
+  // 2.添加Identityserver4认证
+  .AddIdentityServerAuthentication(options =&gt;
+  {
+      options.Authority = Appsettings.app(new string[] { &quot;Startup&quot;, &quot;IdentityServer4&quot;, &quot;AuthorizationUrl&quot; });
+      options.RequireHttpsMetadata = false;
+      options.ApiName = Appsettings.app(new string[] { &quot;Startup&quot;, &quot;IdentityServer4&quot;, &quot;ApiName&quot; });
+      options.SupportedTokens = IdentityServer4.AccessTokenValidation.SupportedTokens.Jwt;
+      options.ApiSecret = &quot;api_secret&quot;;
+
+  })
+
+
+</code></pre></div><h3 id="如何在swagger中配置ids4"><a href="#如何在swagger中配置ids4" class="header-anchor">#</a> 如何在Swagger中配置Ids4？</h3> <p>很简单，直接在 <code>SwaggerSetup.cs</code> 中直接接入 <code>oauth、Implicit</code> 即可：</p> <div class="language- extra-class"><pre class="language-text"><code> //接入identityserver4
+ c.AddSecurityDefinition(&quot;oauth2&quot;, new OpenApiSecurityScheme
+ {
+     Type = SecuritySchemeType.OAuth2,
+     Flows = new OpenApiOAuthFlows
+     {
+         Implicit = new OpenApiOAuthFlow
+         {
+             AuthorizationUrl = new Uri($&quot;{Appsettings.app(new string[] { &quot;Startup&quot;, &quot;IdentityServer4&quot;, &quot;AuthorizationUrl&quot; })}/connect/authorize&quot;),
+             Scopes = new Dictionary&lt;string, string&gt; {
+             {
+                 &quot;blog.core.api&quot;,&quot;ApiResource id&quot;
+             }
+         }
+         }
+     }
+ });
+
+</code></pre></div><p>然后在 <code>IdentityServer4</code>  项目中，做指定的修改，配置 <code>9291</code> 的回调地址：</p> <div class="language- extra-class"><pre class="language-text"><code> new Client {
+     ClientId = &quot;blogadminjs&quot;,
+     ClientName = &quot;Blog.Admin JavaScript Client&quot;,
+     AllowedGrantTypes = GrantTypes.Implicit,
+     AllowAccessTokensViaBrowser = true,
+
+     RedirectUris =
+     {
+         &quot;http://vueadmin.neters.club/callback&quot;,
+         // 这里要配置回调地址
+         &quot;http://localhost:9291/oauth2-redirect.html&quot; 
+     },
+     PostLogoutRedirectUris = { &quot;http://vueadmin.neters.club&quot; },
+     AllowedCorsOrigins =     { &quot;http://vueadmin.neters.club&quot; },
+
+     AllowedScopes = {
+         IdentityServerConstants.StandardScopes.OpenId,
+         IdentityServerConstants.StandardScopes.Profile,
+         &quot;roles&quot;,
+         &quot;blog.core.api&quot;
+     }
+ },
+
+</code></pre></div><p>然后再 <code>Swagger</code> 中，配置登录授权：</p> <img src="http://apk.neters.club/images/20200507213830.png" alt="swagger" width="600"> <h2 id="authorization-jwt"><a href="#authorization-jwt" class="header-anchor">#</a> Authorization-JWT</h2> <p>如果你不想使用 <code>IdentityServer4</code> 的话，也可以使用 <code>JWT</code> 认证，同样是是<code>Blog.Core\Blog.Core\Extensions</code> 文件夹下的 <code>AuthorizationSetup.cs</code> 中有关认证的部分：</p> <div class="language- extra-class"><pre class="language-text"><code> 1.添加JwtBearer认证服务
+.AddJwtBearer(o =&gt;
+{
+    o.TokenValidationParameters = tokenValidationParameters;
+    o.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = context =&gt;
+        {
+            // 如果过期，则把&lt;是否过期&gt;添加到，返回头信息中
+            if (context.Exception.GetType() == typeof(SecurityTokenExpiredException))
+            {
+                context.Response.Headers.Add(&quot;Token-Expired&quot;, &quot;true&quot;);
+            }
+            return Task.CompletedTask;
+        }
+    };
+})
+
+</code></pre></div><h2 id="automapper"><a href="#automapper" class="header-anchor">#</a> AutoMapper</h2> <p>使用 <code>AutoMapper</code> 组件来实现 <code>Dto</code> 模型的传输转换，具体的用法，可以查看：<br> <code>Blog.Core\Blog.Core\Extensions</code> 文件夹下的 <code>AutoMapperSetup.cs</code> 扩展类，<br>
+通过引用 <code>AutoMapper</code> 和 <code>AutoMapper.Extensions.Microsoft.DependencyInjection</code> 两个 <code>nuget</code> 包，并设置指定的 <code>profile</code> 文件，来实现模型转换控制。</p> <div class="language- extra-class"><pre class="language-text"><code>// 比如如何定义：
+ public class CustomProfile : Profile
+ {
+     /// &lt;summary&gt;
+     /// 配置构造函数，用来创建关系映射
+     /// &lt;/summary&gt;
+     public CustomProfile()
+     {
+         CreateMap&lt;BlogArticle, BlogViewModels&gt;();
+         CreateMap&lt;BlogViewModels, BlogArticle&gt;();
+     }
+ }
+
+
+// 比如如何使用
+models = _mapper.Map&lt;BlogViewModels&gt;(blogArticle);
+
+</code></pre></div><p>具体的查看项目中代码即可。</p> <h2 id="cors"><a href="#cors" class="header-anchor">#</a> CORS</h2> <p>在线项目使用的是 <code>nginx</code> 跨域代理，但是同时也是支持 <code>CORS</code> 代理：<br>
+1、注入服务 <code>services.AddCorsSetup();</code> 具体代码 <code>Blog.Core\Blog.Core\Extensions</code> 文件夹下的 <code>CorsSetup.cs</code> 扩展类；<br>
+2、配置中间件 <code>app.UseCors(&quot;LimitRequests&quot;);</code> ,要注意中间件顺序；<br>
+3、配置自己项目的前端端口，通过在 <code>appsettings.json</code> 文件中配置自己的前端项目 <code>ip:端口</code> ，来实现跨域：</p> <div class="language- extra-class"><pre class="language-text"><code>  &quot;Startup&quot;: {
+    &quot;Cors&quot;: {
+      &quot;IPs&quot;: &quot;http://127.0.0.1:2364,http://localhost:2364,http://localhost:8080,http://localhost:8021,http://localhost:1818&quot;
+    }
+  },
+
+</code></pre></div><h2 id="di-autofac"><a href="#di-autofac" class="header-anchor">#</a> DI-AutoFac</h2> <p>项目使用了依赖注入，除了原生的依赖注入以外，更多的使用的是第三方组件 <code>Autofac</code> ：<br>
+1、引用依赖包：</p> <div class="language- extra-class"><pre class="language-text"><code>    &lt;PackageReference Include=&quot;Autofac.Extensions.DependencyInjection&quot; Version=&quot;5.0.1&quot; /&gt;
+    &lt;PackageReference Include=&quot;Autofac.Extras.DynamicProxy&quot; Version=&quot;4.5.0&quot; /&gt;
+
+</code></pre></div><p>主要是第一个 <code>nuget</code> 包，下边的是为了实现动态代理 <code>AOP</code> 操作；</p> <p>2、项目之间采用引用解耦的方式，通过反射来注入服务层和仓储层的程序集 <code>dll</code> 来实现批量注入，更方便，以后每次新增和修改 <code>Service</code> 层和 <code>Repository</code> 层，只需要 <code>F6</code> 编译一下即可，具体代码查看 <code>Startup.cs</code>：</p> <div class="language- extra-class"><pre class="language-text"><code>
+
+        // 注意在CreateDefaultBuilder中，添加Autofac服务工厂
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            var basePath = Microsoft.DotNet.PlatformAbstractions.ApplicationEnvironment.ApplicationBasePath;
+            //builder.RegisterType&lt;AdvertisementServices&gt;().As&lt;IAdvertisementServices&gt;();
+
+
+            #region 带有接口层的服务注入
+
+
+            var servicesDllFile = Path.Combine(basePath, &quot;Blog.Core.Services.dll&quot;);
+            var repositoryDllFile = Path.Combine(basePath, &quot;Blog.Core.Repository.dll&quot;);
+
+            if (!(File.Exists(servicesDllFile) &amp;&amp; File.Exists(repositoryDllFile)))
+            {
+                throw new Exception(&quot;Repository.dll和service.dll 丢失，因为项目解耦了，所以需要先F6编译，再F5运行，请检查 bin 文件夹，并拷贝。&quot;);
+            }
+
+
+
+            // AOP 开关，如果想要打开指定的功能，只需要在 appsettigns.json 对应对应 true 就行。
+            var cacheType = new List&lt;Type&gt;();
+            if (Appsettings.app(new string[] { &quot;AppSettings&quot;, &quot;RedisCachingAOP&quot;, &quot;Enabled&quot; }).ObjToBool())
+            {
+                builder.RegisterType&lt;BlogRedisCacheAOP&gt;();
+                cacheType.Add(typeof(BlogRedisCacheAOP));
+            }
+            if (Appsettings.app(new string[] { &quot;AppSettings&quot;, &quot;MemoryCachingAOP&quot;, &quot;Enabled&quot; }).ObjToBool())
+            {
+                builder.RegisterType&lt;BlogCacheAOP&gt;();
+                cacheType.Add(typeof(BlogCacheAOP));
+            }
+            if (Appsettings.app(new string[] { &quot;AppSettings&quot;, &quot;TranAOP&quot;, &quot;Enabled&quot; }).ObjToBool())
+            {
+                builder.RegisterType&lt;BlogTranAOP&gt;();
+                cacheType.Add(typeof(BlogTranAOP));
+            }
+            if (Appsettings.app(new string[] { &quot;AppSettings&quot;, &quot;LogAOP&quot;, &quot;Enabled&quot; }).ObjToBool())
+            {
+                builder.RegisterType&lt;BlogLogAOP&gt;();
+                cacheType.Add(typeof(BlogLogAOP));
+            }
+
+            // 获取 Service.dll 程序集服务，并注册
+            var assemblysServices = Assembly.LoadFrom(servicesDllFile);
+            builder.RegisterAssemblyTypes(assemblysServices)
+                      .AsImplementedInterfaces()
+                      .InstancePerDependency()
+                      .EnableInterfaceInterceptors()//引用Autofac.Extras.DynamicProxy;
+                      .InterceptedBy(cacheType.ToArray());//允许将拦截器服务的列表分配给注册。
+
+            // 获取 Repository.dll 程序集服务，并注册
+            var assemblysRepository = Assembly.LoadFrom(repositoryDllFile);
+            builder.RegisterAssemblyTypes(assemblysRepository)
+                   .AsImplementedInterfaces()
+                   .InstancePerDependency();
+
+            #endregion
+
+            #region 没有接口层的服务层注入
+
+            //因为没有接口层，所以不能实现解耦，只能用 Load 方法。
+            //注意如果使用没有接口的服务，并想对其使用 AOP 拦截，就必须设置为虚方法
+            //var assemblysServicesNoInterfaces = Assembly.Load(&quot;Blog.Core.Services&quot;);
+            //builder.RegisterAssemblyTypes(assemblysServicesNoInterfaces);
+
+            #endregion
+
+            #region 没有接口的单独类 class 注入
+
+            //只能注入该类中的虚方法
+            builder.RegisterAssemblyTypes(Assembly.GetAssembly(typeof(Love)))
+                .EnableClassInterceptors()
+                .InterceptedBy(cacheType.ToArray());
+
+            #endregion
+
+
+            // 这里和注入没关系，只是获取注册列表，请忽略
+            tsDIAutofac.AddRange(assemblysServices.GetTypes().ToList());
+            tsDIAutofac.AddRange(assemblysRepository.GetTypes().ToList());
+        }
+
+</code></pre></div><p>3、然后 <code>Program.cs</code> 中也要加一句话：<code>.UseServiceProviderFactory(new AutofacServiceProviderFactory()) //&lt;--NOTE THIS</code></p> <h2 id="di-netcore"><a href="#di-netcore" class="header-anchor">#</a> DI-NetCore</h2> <p>除了主要的 <code>Autofac</code> 依赖注入以外，也减少的使用了原生的依赖注入方式，很简单，比如这样的：</p> <div class="language- extra-class"><pre class="language-text"><code>
+            services.AddSingleton&lt;IHttpContextAccessor, HttpContextAccessor&gt;();
+            // 注入权限处理器
+            services.AddScoped&lt;IAuthorizationHandler, PermissionHandler&gt;();
+            services.AddSingleton(permissionRequirement);
+</code></pre></div><h2 id="filter"><a href="#filter" class="header-anchor">#</a> Filter</h2> <p>项目中一共有四个过滤器</p> <div class="language- extra-class"><pre class="language-text"><code>1、GlobalAuthorizeFilter.cs —— 全局授权配置，添加后，就可以不用在每一个控制器上添加 [Authorize] 特性，但是3.1版本好像有些问题，【暂时放弃使用】；
+2、GlobalExceptionFilter.cs —— 全局异常处理，实现 actionContext 级别的异常日志收集；
+3、GlobalRoutePrefixFilter.cs —— 全局路由前缀公约，统计在路由上加上前缀；
+4、UseServiceDIAttribute.cs —— 测试注入，【暂时无用】；
+</code></pre></div><p>文件地址在 <code>.\Blog.Core\Filter</code> 文件夹下，其中核心的是 <code>2</code> 个，重点使用的是 <code>1</code> 个 —— 全局异常错误日志 <code>GlobalExceptionsFilter</code>:
+通过注册在 <code>MVC</code> 服务 <code>services.AddControllers()</code> 中，实现全局异常过滤：</p> <div class="language- extra-class"><pre class="language-text"><code> services.AddControllers(o =&gt;
+ {
+     // 全局异常过滤
+     o.Filters.Add(typeof(GlobalExceptionsFilter));
+     // 全局路由权限公约
+     //o.Conventions.Insert(0, new GlobalRouteAuthorizeConvention());
+     // 全局路由前缀，统一修改路由
+     o.Conventions.Insert(0, new GlobalRoutePrefixFilter(new RouteAttribute(RoutePrefix.Name)));
+ })
+</code></pre></div><h2 id="framework"><a href="#framework" class="header-anchor">#</a> Framework</h2> <p>项目采用 <code>服务+仓储+接口</code> 的多层结构，使用依赖注入，并且通过解耦项目，较完整的实现了 <code>DIP</code> 原则：<br>
+高层模块不应该依赖于底层模块，二者都应该依赖于抽象。<br>
+抽象不应该依赖于细节，细节应该依赖于抽象。</p> <p>同时项目也封装了:<br> <code>CodeFirst</code> 初始化数据库以及数据；<br> <code>DbFirst</code> 根据数据库（支持多库），生成多层代码，算是简单代码生成器；<br>
+其他功能，<a href="http://apk.neters.club/.doc/guide/#%E5%8A%9F%E8%83%BD%E4%B8%8E%E8%BF%9B%E5%BA%A6" target="_blank" rel="noopener noreferrer">核心功能与进度<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="log"><a href="#log" class="header-anchor">#</a> Log</h2> <p>通过集成 <code>Log4Net</code> 组件，完美配合 <code>NetCore</code> 官方的 <code>ILogger&lt;T&gt;</code> 接口，实现对日志的管控，引用 <code>nuget</code> 包 <code>Microsoft.Extensions.Logging.Log4Net.AspNetCore</code>:
+Program.cs</p> <div class="language- extra-class"><pre class="language-text"><code>  webBuilder
+  .UseStartup&lt;Startup&gt;()
+  .ConfigureLogging((hostingContext, builder) =&gt;
+  {
+      //该方法需要引入Microsoft.Extensions.Logging名称空间
+      builder.AddFilter(&quot;System&quot;, LogLevel.Error); //过滤掉系统默认的一些日志
+      builder.AddFilter(&quot;Microsoft&quot;, LogLevel.Error);//过滤掉系统默认的一些日志
+
+      //添加Log4Net
+      //var path = Directory.GetCurrentDirectory() + &quot;\\log4net.config&quot;; 
+      //不带参数：表示log4net.config的配置文件就在应用程序根目录下，也可以指定配置文件的路径
+      //需要添加nuget包：Microsoft.Extensions.Logging.Log4Net.AspNetCore
+      builder.AddLog4Net();
+  });
+
+</code></pre></div><p>然后直接在需要的地方注入使用，比如在控制器中
+<code>public UserController(ILogger&lt;UserController&gt; logger)</code></p> <p>然后就可以使用了。</p> <blockquote><p>注意：日志 其实是分为两部分的：<br>
+netcore输出(控制台、输出窗口等) 和 <code>ILogger</code> 持久化<br>
+两者对应配置也不一样，就比如上边的过滤，是针对日志持久化的，如果想要对控制台进行控制，需要配置 <code>appsettings.json</code> 中的 <code>Logging</code> 节点</p></blockquote> <h2 id="memorycache"><a href="#memorycache" class="header-anchor">#</a> MemoryCache</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="middleware"><a href="#middleware" class="header-anchor">#</a> Middleware</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="miniprofiler"><a href="#miniprofiler" class="header-anchor">#</a> MiniProfiler</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="publish"><a href="#publish" class="header-anchor">#</a> publish</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="redis"><a href="#redis" class="header-anchor">#</a> Redis</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="repository"><a href="#repository" class="header-anchor">#</a> Repository</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="seeddata"><a href="#seeddata" class="header-anchor">#</a> SeedData</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="signalr"><a href="#signalr" class="header-anchor">#</a> SignalR</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="sqlsugar"><a href="#sqlsugar" class="header-anchor">#</a> SqlSugar</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="sqlsugar-codefirst-dataseed"><a href="#sqlsugar-codefirst-dataseed" class="header-anchor">#</a> SqlSugar-Codefirst&amp;DataSeed</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="sqlsugar-sqlaop"><a href="#sqlsugar-sqlaop" class="header-anchor">#</a> SqlSugar-SqlAOP</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="swagger"><a href="#swagger" class="header-anchor">#</a> Swagger</h2> <p>精力有限，还是更新中...<br>
+如果你愿意帮忙，可以直接在GitHub中，提交pull request，<br>
+我会在后边的贡献者页面里，列出你的名字和项目地址做推广</p> <h2 id="t4"><a href="#t4" class="header-anchor">#</a> T4</h2> <p>项目集成 <code>T4</code> 模板 <code>.\Blog.Core.FrameWork</code> 层，目的是可以一键生成项目模板代码。<br>
+1、需要在 <code>DbHelper.ttinclude</code> 中配置连接数据库连接字符串；<br>
+2、针对每一层的代码，就去指定的 <code>.tt</code> 模板，直接 <code>CTRL+S</code> 保存即可；</p> <blockquote><p>注意，目前的代码是 <code>SqlServer</code> 版本的，其他数据库版本的，可以去群文件查看。</p></blockquote> <h2 id="test-xunit"><a href="#test-xunit" class="header-anchor">#</a> Test-xUnit</h2> <p>项目简单使用了单元测试，通过 <code>xUnit</code> 组件，具体的可以查看 <code>Blog.Core.Tests</code> 层相关代码。<br>
+目前单元测试用例还比较少，大家可以自行添加。</p> <h2 id="temple-nuget"><a href="#temple-nuget" class="header-anchor">#</a> Temple-Nuget</h2> <p>本项目封装了 <code>Nuget</code> 自定义模板，你可以根据这个模板，一键创建自己的项目名，具体的操作，可以双击项目根目录下的 <code>CreateYourProject.bat</code> ，可以参考 <a href="http://apk.neters.club/.doc/guide/getting-started.html#%E5%A6%82%E4%BD%95%E9%A1%B9%E7%9B%AE%E9%87%8D%E5%91%BD%E5%90%8D" target="_blank" rel="noopener noreferrer">#如何项目重命名<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>同时，你也可以再 <code>Nuget</code> 管理器中，搜索到：
+<img src="http://apk.neters.club/images/20200507223058.png" alt="nuget" width="600"></p> <h2 id="userinfo"><a href="#userinfo" class="header-anchor">#</a> UserInfo</h2> <p>项目中封装了获取用户信息的代码：<br>
+在 <code>.\Blog.Core.Common\HttpContextUser</code> 文件夹下 <code>AspNetUser.cs</code> 实现类和 <code>IUser.cs</code> 接口。</p> <p>如果使用，首先需要注册相应的服务，参见：<code>.\Blog.Core\Extensions</code> 文件夹下的 <code>HttpContextSetup.cs</code>；<br>
+然后，就直接在控制器构造函数中，注入接口 <code>IUser</code> 即可；</p> <blockquote><p><code>注意</code>：<br>
+1、如果要想获取指定的服务，必须登录，也就是必须要在 <code>Header</code> 中传递有效 <code>Token</code> ，这是肯定的。<br>
+2、如果要获取用户信息，一定要在中间件 <code>app.UseAuthentication()</code> 之后（不要问为什么），控制器肯定在它之后，所以能获取到；<br>
+3、<code>【并不是】</code>一定需要添加 <code>[Authorize]</code> 特性，如果你加了这个特性，可以直接获取，但是如果不加，可以从我的 <code>AspNetUser.cs</code> 方法中，有一个直接从 <code>Header</code> 中解析的方法 <code>List&lt;string&gt; GetUserInfoFromToken(string ClaimType);</code>：</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code> public string GetToken()
+ {
+     return _accessor.HttpContext.Request.Headers[&quot;Authorization&quot;].ObjToString().Replace(&quot;Bearer &quot;, &quot;&quot;);
+ }
+
+ public List&lt;string&gt; GetUserInfoFromToken(string ClaimType)
+ {
+
+     var jwtHandler = new JwtSecurityTokenHandler();
+     if (!string.IsNullOrEmpty(GetToken()))
+     {
+         JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(GetToken());
+
+         return (from item in jwtToken.Claims
+                 where item.Type == ClaimType
+                 select item.Value).ToList();
+     }
+     else
+     {
+         return new List&lt;string&gt;() { };
+     }
+ }
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/.doc/guide/function-sheet.html" class="prev">
+        H  核心功能一览表
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/.doc/assets/js/app.9f716c86.js" defer></script><script src="/.doc/assets/js/2.9993b050.js" defer></script><script src="/.doc/assets/js/1.2563e7c6.js" defer></script><script src="/.doc/assets/js/28.cda83a6f.js" defer></script>
+  </body>
+</html>
