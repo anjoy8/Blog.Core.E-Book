@@ -1,8 +1,8 @@
 ﻿# K  快速上手
 注意
 
-请确保你的 `Visual Studio 2019` 版本 >= `16.8.2`。    
-并安装 `.NET 5.0 SDK`  
+请确保你的 `Visual Studio 2022` 版本 >= `17.8.0`。    
+并安装 `.NET 8.0 SDK`  
 
 
 ## 下载
@@ -38,35 +38,104 @@ Gitee（国内） 下载 [https://gitee.com/laozhangIsPhi/Blog.Core](https://git
 4、然后 `MainDB` 设置为下边你使用的指定 `ConnId`:  
 
 ```
-  "MainDB": "WMBLOG_MSSQL", //当前项目的主库，所对应的连接字符串的Enabled必须为true
-  "MutiDBEnabled": false, //是否开启多库
-  "DBS": [
-    {
-      "ConnId": "WMBLOG_SQLITE",
-      "DBType": 2,// sqlite数据库
-      "Enabled": true,// 设置为true，启用1
-      "Connection": "WMBlog.db" //只写数据库名就行
-    },
-    {
-      "ConnId": "WMBLOG_MSSQL",
-      "DBType": 1,// sqlserver数据库
-      "Enabled": true,// 设置为true，启用2
-      "Connection": "Server=.;Database=WMBlogDB;User ID=sa;Password=123;",
-      "ProviderName": "System.Data.SqlClient"
-    },
-    {
-      "ConnId": "WMBLOG_MYSQL",
-      "DBType": 0,// mysql
-      "Enabled": false,// false 不启用
-      "Connection": "Server=localhost; Port=3306;Stmt=; Database=wmblogdb; Uid=root; Pwd=456;"
-    },
-    {
-      "ConnId": "WMBLOG_ORACLE",
-      "DBType": 3,// Oracle 
-      "Enabled": false,// 不启用
-      "Connection": "Provider=OraOLEDB.Oracle; Data Source=WMBlogDB; User Id=sss; Password=789;"
-    }
-  ],
+//优化DB配置、不会再区分单库多库
+//MainDb：标识当前项目的主库，所对应的连接字符串的Enabled必须为true
+//Log:标识日志库，所对应的连接字符串的Enabled必须为true
+//从库只需配置Slaves数组,要求数据库类型一致!，比如都是SqlServer
+//
+//新增,故障转移方案
+//如果主库挂了,会自动切换到备用连接(比如说主库+备用库)
+//备用连接的ConnId配置为主库的ConnId+数字即可,比如主库的ConnId为Main,那么备用连接的ConnId为Mian1
+//主库、备用库无需数据库类型一致!
+//备用库不会有程序维护,需要手动维护
+"MainDB": "Main", //当前项目的主库，所对应的连接字符串的Enabled必须为true
+"DBS": [
+  /*
+    对应下边的 DBType
+    MySql = 0,
+    SqlServer = 1,
+    Sqlite = 2,
+    Oracle = 3,
+    PostgreSQL = 4,
+    Dm = 5,//达梦
+    Kdbndp = 6,//人大金仓
+  */
+  {
+    "ConnId": "Main",
+    "DBType": 2,
+    "Enabled": true,
+    "Connection": "WMBlog.db", //sqlite只写数据库名就行
+    "Slaves": [
+      {
+        "HitRate": 0,// 值越大，优先级越高 0不使用
+        "Connection": "WMBlog2.db"
+      }
+    ]
+  },
+  {
+    "ConnId": "Main2",
+    "DBType": 2,
+    "Enabled": true,
+    "Connection": "WMBlog3.db", //sqlite只写数据库名就行
+    "Slaves": [
+      {
+        "HitRate": 0,// 值越大，优先级越高 0不使用
+        "Connection": "WMBlog4.db"
+      }
+    ]
+  },
+  {
+    "ConnId": "Log", //日志库连接固定名称，不要改,其他的可以改
+    "DBType": 2,
+    "Enabled": true,
+    "HitRate": 50,
+    "Connection": "WMBlogLog.db" //sqlite只写数据库名就行
+  },
+  {
+    "ConnId": "WMBLOG_MSSQL_1",
+    "DBType": 1,
+    "Enabled": false,
+    "Connection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=WMBLOG_MSSQL_1;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
+    "ProviderName": "System.Data.SqlClient"
+  },
+  {
+    "ConnId": "WMBLOG_MSSQL_2",
+    "DBType": 1,
+    "Enabled": false,
+    "Connection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=WMBLOG_MSSQL_2;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False",
+    "ProviderName": "System.Data.SqlClient"
+  },
+  {
+    "ConnId": "WMBLOG_MYSQL",
+    "DBType": 0,
+    "Enabled": false,
+    "Connection": "server=localhost;Database=blog;Uid=root;Pwd=root;Port=3306;Allow User Variables=True;"
+  },
+  {
+    "ConnId": "WMBLOG_MYSQL_2",
+    "DBType": 0,
+    "Enabled": false,
+    "Connection": "server=localhost;Database=blogcore001;Uid=root;Pwd=root;Port=3306;Allow User Variables=True;"
+  },
+  {
+    "ConnId": "WMBLOG_ORACLE",
+    "DBType": 3,
+    "Enabled": false,
+    "Connection": "Data Source=127.0.0.1/ops;User ID=OPS;Password=123456;Persist Security Info=True;Connection Timeout=60;"
+  },
+  {
+    "ConnId": "WMBLOG_DM",
+    "DBType": 5,
+    "Enabled": false,
+    "Connection": "Server=xxxxx:5236;User Id=xxxxx;PWD=xxxxx;SCHEMA=TESTDBA;"
+  },
+  {
+    "ConnId": "WMBLOG_KDBNDP",
+    "DBType": 6,
+    "Enabled": false,
+    "Connection": "Server=127.0.0.1;Port=54321;UID=SYSTEM;PWD=system;database=SQLSUGAR4XTEST1;"
+  }
+]
 ```
   
 
@@ -78,7 +147,7 @@ Gitee（国内） 下载 [https://gitee.com/laozhangIsPhi/Blog.Core](https://git
 ```
 
 ## 如何配置项目端口号
-1、在 `Blog.Core` 层下的 `program.cs` 文件中，将 `9291`端口，修改为自己想要的端口号；    
+1、在 `Blog.Core` 层下的 `appsettings.json` 文件中，将 `9291`端口，修改为自己想要的端口号；    
 2、或者在 `launchSettings.json` 中设置(`注意，如果仅仅修改这里，publish后，端口访问无效`)；
 
 ## 如何项目重命名
@@ -91,7 +160,7 @@ Gitee（国内） 下载 [https://gitee.com/laozhangIsPhi/Blog.Core](https://git
 1、在 `Blog.Core.Model` 项目目录下的 `Seed` 文件夹下，找到 `DBSeed` 类；  
 2、根据提示，找到生成table的地方 `myContext.CreateTableByEntity`；  
 3、添加进去你新增的实体类，当然也可以用下边的单独写法；  
-4、编译项目，没错后，运行,则数据库更新完毕；  
+4、编译项目，没错后，运行，则数据库更新完毕；  
 
 
 ## 新增实体，如何进行增删改查CURD操作
