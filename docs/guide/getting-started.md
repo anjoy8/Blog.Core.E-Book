@@ -172,8 +172,17 @@ Gitee（国内） 下载 [https://gitee.com/laozhangIsPhi/Blog.Core](https://git
 6、项目已经自动注入了，直接在控制器使用对应的服务层接口就行： `IxxxxService` ;  
 
 
-## 新增数据库表，如何反向生成四层文件
-1、可以通过 `T4` 模板来生成，在 `Blog.Core.FrameWork` 层，使用方法: [9757999.html](https://www.cnblogs.com/laozhang-is-phi/p/9757999.html#autoid-4-3-0) ；  
+## 新增数据库表，代码生成器生成四层文件
+
+1、可以通过 `Sqlsugar` 所带的方法来实现 `DbFirst`（推荐），  
+框架已经封装好接口，直接本地调试，调用接口：/api/DbFirst/GetFrameFiles  
+看一下 `DbFirstContrller.cs` 文件就都明白了。  
+
+
+具体查看 `Controller` 层下的 `DbFirstController.cs`；   
+
+2、也可以通过 `T4` 模板来生成（不推荐，需要指定对应的模板，除非自己研究过T4用法），    
+在 `Blog.Core.FrameWork` 层，使用方法: [9757999.html](https://www.cnblogs.com/laozhang-is-phi/p/9757999.html#autoid-4-3-0) ；  
 > 注意：这种方案，目前默认的只能是 `SqlServer` ，其他类型的数据库，可以看上边文章中的代码，或者群文件里对应的代码。 
 
 > 1、修改`DbHelper.ttinclude`文件中的连接字符串，注意是`SqlServer`的： public static readonly string ConnectionString;  
@@ -181,8 +190,7 @@ Gitee（国内） 下载 [https://gitee.com/laozhangIsPhi/Blog.Core](https://git
 > 3、就会在对应的层内，看到新文件，比如：Blog.Core.Model/Model_NEW   
 
 
-
-2、也可以通过 `Sqlsugar` 所带的方法来实现 `DbFirst`，具体查看 `Controller` 层下的 `DbFirstController.cs`；   
+  
 
 3、总体操作过程，可以参考我的视频：[av77612407](https://www.bilibili.com/video/av77612407?p=2) ；   
 
